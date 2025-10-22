@@ -1,3 +1,5 @@
+/* Global styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +8,175 @@
 
 }
 
+.main-nav{
+    width: 100%;
+}
+
 body {
     font-family: "Montserrat", sans-serif;
 }
 
-.logo a img {
-    border: solid red;
-    width: 150px; 
+.nav-logo{
+    /* border: solid red; */
+    display: block;
+    width: 150px;
     height: auto;
+}
+
+.mobile-logo{
+    display: none;
+}
+
+#nav-icon-container img {
+    width: 25px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.anywhere-container img {
+    width: 40px;
+    height: auto;
+    margin-left: 4px;
+}
+
+.search-icon-container img {
+    width: 50px;
+    height: auto;
+}
+
+.container {
+    max-width: 1800px;
+    width: 95%;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* 
+
+HEADER / NAVIGATION AREA
+
+
+*/
+
+header {
+    background-color: #ededed;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trip-planer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 35px;
+    box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.anywhere-container {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.pipe-container {
+    margin: 0 1rem;
+}
+
+.pipe {
+    width: 1px;
+    height: 30px;
+    background-color: #242424;
+    opacity: .2;
+}
+
+.add-guest-container{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.search-icon-container{
+    margin-top: 3px;
+}
+
+.nav-menu-links{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+#host-link{
+    border-radius: 35px;
+    transition: all .1s ease-in;
+    height: 40px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0px 15px; */
+}
+
+#host-link:hover{
+    background-color: #d8d8d8;
+    color: white;
+}
+
+#nav-icon-container{
+    width:40px ;
+    height: 40px;
+    border-radius: 50%;
+    background-color:#e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-colora .1s ease-in;
+
+}
+
+#nav-icon-container:hover{
+    background-color:#d8d8d8;
+}
+
+
+
+/* 
+
+ MEDIA QUERIES
+
+
+*/
+
+@media screen and (max-width: 1023px) {
+    .nav-logo{
+        display: none;
+    }
+    .mobile-logo{
+        display: block;
+        width: 35px;
+    }
 }
