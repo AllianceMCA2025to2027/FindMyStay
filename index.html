@@ -10,16 +10,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
+    <!-- mobile sticky menu starts -->
+    <!-- <div class="mobile-sticky-menu-container">
+        <div class="mobile-sticky-menu-search">
+            <img src="./nav-icons/search.png" >
+            <p class="mobile-search-p">Start your search</p>
+        </div> -->
+    </div>
     <header>
         <div class="container">
             <nav class="main-nav">
                 <div class="logo-container">
-                    <a href="#"><img src="./logo.png" alt="FindMyStay logo" class= "nav-logo"></a>
+                    <a href="#"><img src="./logo.png" alt="FindMyStay logo" class="nav-logo"></a>
                     <a href="#"><img src="./icon.png" alt="FindMyStay logo" class="mobile-logo"></a>
                 </div>
 
@@ -58,7 +70,7 @@
                         <a href="#" class="nav-link"><img src="./language-icon.svg" alt=""></a>
                     </li>
                     <li id="nav-icon-container">
-                        <a href="#" class="nav-link"><img src="./show-all-icon.svg" alt=""></a>
+                        <a href="#" class="nav-link"><i class="fa-solid fa-bars fa-lg" style="color: black;"></i></a>
                     </li>
 
                 </ul>
@@ -66,7 +78,50 @@
         </div>
 
     </header>
-
+    <!-- mobile menu -->
+    <div class="container">
+        <div class="mobile-menu-fixed">
+            <div class="mobile-view-container">
+                <ul class="mobile-menu">
+                    <li class="mobile-menu-li mobile-flexbox">
+                        <a href="#" class="mobile-menu-link">
+                            <div class="circle">
+                                <i class="fa-regular fa-question fa-sm" style="color: #3470af;"></i>    
+                            </div>
+                        </a>
+                        <a href="#" class="mobile-menu-link">Help center</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="mobile-menu-li">
+                        <a href="#" class="mobile-menu-link menu-flexbox">
+                            <div class="mobile-menu-text-container">
+                                <span class="bold-txt">Become a host</span>
+                                <br>
+                                It's easy to start hosting and earn extra income
+                            </div>
+                            <div class="mobile-menu-img-container">
+                                <img src="./person.webp" alt="" class="mobile-menu-img">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="mobile-menu-li">
+                        <a href="#" class="mobile-menu-link">Refer a Host</a>
+                    </li>
+                    <li class="mobile-menu-li">
+                        <a href="#" class="mobile-menu-link">Find a co-host</a>
+                    </li>
+                    <li class="mobile-menu-li">
+                        <a href="#" class="mobile-menu-link">Gift cards</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="mobile-menu-li">
+                        <a href="#" class="mobile-menu-link">Login or Sign-up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 
 
