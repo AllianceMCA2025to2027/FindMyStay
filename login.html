@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | FindMyStay</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="./icon.png">
+  <style>
+    /* ===== Global Styles ===== */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background-color: #f7f8fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* ===== Login Container ===== */
+    .login-container {
+      background-color: #fff;
+      width: 380px;
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== Header ===== */
+    .login-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .login-header h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #2c9ef4;
+      font-weight: 600;
+    }
+
+    /* ===== Form Elements ===== */
+    label {
+      align-self: flex-start;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 6px;
+      margin-top: 10px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 14px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    select:focus, input:focus {
+      border-color: #2c9ef4;
+    }
+
+    /* ===== Buttons ===== */
+    .continue-btn {
+      width: 200px;
+      background-color: #3370af;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 5px;
+    }
+
+    .continue-btn:hover {
+      background-color: #37af33;
+    }
+
+    /* ===== Divider ===== */
+    .divider {
+      text-align: center;
+      margin: 20px 0;
+      color: #aaa;
+      position: relative;
+      width: 100%;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: #ddd;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    /* ===== Social Buttons ===== */
+    .social-btn {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: white;
+      transition: 0.3s;
+    }
+
+    .social-btn:hover {
+      background-color: #f4f4f4;
+    }
+
+    .social-btn i {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    /* ===== Small Text ===== */
+    .info-text {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    .info-text a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .info-text a:hover {
+      text-decoration: underline;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ===== Responsive Styles ===== */
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+        height: auto;
+      }
+
+      .login-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 24px 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+
+      .login-header h2 {
+        font-size: 20px;
+      }
+
+      .continue-btn {
+        width: 100%;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 20px 18px;
+      }
+
+      .login-header h2 {
+        font-size: 18px;
+      }
+
+      select, input {
+        font-size: 13px;
+        padding: 10px;
+      }
+
+      .social-btn {
+        font-size: 13px;
+        padding: 9px;
+      }
+
+      .social-btn i {
+        margin-right: 8px;
+        font-size: 15px;
+      }
+
+      .continue-btn {
+        font-size: 15px;
+        padding: 9px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .login-container {
+        border-radius: 10px;
+        padding: 16px;
+      }
+
+      .continue-btn {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-header">
+      <h2>Welcome to FindMyStay</h2>
+    </div>
+
+    <label for="country">Country/Region</label>
+    <select id="country">
+      <option>🇮🇳 India (+91)</option>
+      <option>🇦🇺 Australia (+61)</option>
+      <option>🇺🇸 United States (+1)</option>
+      <option>🇬🇧 United Kingdom (+44)</option>
+      <option>🇨🇦 Canada (+1)</option>
+      <option>🇸🇬 Singapore (+65)</option>
+    </select>
+
+    <label for="phone">Phone number</label>
+    <input type="text" id="phone" placeholder="Enter your phone number">
+    <form action="./index.html">
+      <button class="continue-btn">Continue</button>
+    </form>
+    
+    <p class="info-text">
+      We’ll call or text you to confirm your number. Standard message and data rates apply.
+      <a href="#">Privacy Policy</a>
+    </p>
+
+    <div class="divider">or</div>
+
+    <div class="social-btn"><i class="fab fa-google"></i>Continue with Google</div>
+    <div class="social-btn"><i class="fab fa-apple"></i>Continue with Apple</div>
+    <div class="social-btn"><i class="fa-regular fa-envelope"></i>Continue with Email</div>
+    <div class="social-btn"><i class="fab fa-facebook"></i>Continue with Facebook</div>
+  </div>
+
+</body>
+</html>

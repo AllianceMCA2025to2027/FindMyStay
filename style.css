@@ -355,3 +355,102 @@ Destinations Card
     font-size: 11px;
     color: #6a6a6a;
 }
+
+/* ===== Responsive Media Queries ===== */
+
+/* --- For tablets (landscape and smaller desktops) --- */
+@media screen and (max-width: 1024px) {
+  .destinations-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.8rem;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  .trip-planer-container {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .nav-menu-links {
+    column-gap: 0.7rem;
+  }
+}
+
+/* --- For tablets and large phones --- */
+@media screen and (max-width: 768px) {
+  .trip-planer-container {
+    box-shadow: 0px 0px 6px -2px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    font-size: 12px;
+  }
+
+  .pipe {
+    height: 20px;
+  }
+
+  .anywhere-container img {
+    width: 32px;
+  }
+
+  .search-icon-container img {
+    width: 40px;
+  }
+
+  .destinations-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .destination-img {
+    height: 170px;
+  }
+
+  .destination-text-header {
+    font-size: 11px;
+  }
+
+  .destination-price {
+    font-size: 10px;
+  }
+}
+
+/* --- For mobile phones --- */
+@media screen and (max-width: 600px) {
+  header {
+    padding: 1rem;
+  }
+
+  .trip-planer-container {
+    display: none; /* Hide main trip planner bar on small screens */
+  }
+
+  .nav-menu-links {
+    column-gap: 0.5rem;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+    width: 30px;
+  }
+
+  .destinations-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+
+  .destination-img {
+    height: 150px;
+  }
+
+  .guest-fevorite {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
