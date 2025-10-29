@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icon.png">
+    <title>2 BHK in Benaulim, South Goa - Luxury Flat</title>
+    <!-- Load Lucide Icons for aesthetic vectors -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* CSS Variables for Theme Consistency */
+        :root {
+            --FindMyStay-red: #FF5A5F;
+            --FindMyStay-dark: #222222;
+            --FindMyStay-light-gray: #F7F7F7;
+            --text-gray-600: #4b5563;
+            --text-gray-700: #374151;
+            --text-gray-800: #1f2937;
+            --border-gray-300: #d1d5db;
+            --border-gray-400: #9ca3af;
+            --max-width-7xl: 1280px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* --------------------------
+           BASE & UTILITY STYLES 
+           -------------------------- */
+        body {
+            background-color: white;
+            font-family: 'Inter', sans-serif;
+            color: var(--FindMyStay-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        /* Responsive Main Container (max-w-7xl, mx-auto, px-4, md:px-8, py-6) */
+        .main-container {
+            max-width: var(--max-width-7xl);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1.5rem 1rem;
+            /* py-6, px-4 */
+        }
+
+        @media (min-width: 768px) {
+            .main-container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        /* Typography and Spacing Utilities */
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-10 {
+            margin-bottom: 2.5rem;
+        }
+
+        .mt-3 {
+            margin-top: 0.75rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem;
+        }
+
+        .mt-8 {
+            margin-top: 2rem;
+        }
+
+        .mt-12 {
+            margin-top: 3rem;
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .pb-6 {
+            padding-bottom: 1.5rem;
+        }
+
+        .pt-4 {
+            padding-top: 1rem;
+        }
+
+        .p-3 {
+            padding: 0.75rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .h-4 {
+            height: 1rem;
+        }
+
+        .h-6 {
+            height: 1.5rem;
+        }
+
+        .w-4 {
+            width: 1rem;
+        }
+
+        .w-6 {
+            width: 1.5rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .transition {
+            transition: all 0.2s ease-in-out;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+
+        .text-base {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .font-normal {
+            font-weight: 400;
+        }
+
+        .text-gray-600 {
+            color: var(--text-gray-600);
+        }
+
+        .text-gray-700 {
+            color: var(--text-gray-700);
+        }
+
+        .text-gray-800 {
+            color: var(--text-gray-800);
+        }
+
+        .text-gray-900:hover {
+            color: #111827;
+        }
+
+        .border-b {
+            border-bottom: 1px solid var(--border-gray-300);
+        }
+
+        .border-t {
+            border-top: 1px solid var(--border-gray-300);
+        }
+
+        .border-r {
+            border-right: 1px solid var(--border-gray-400);
+        }
+
+        .border-gray-200 {
+            border: 1px solid #e5e7eb;
+        }
+
+        .border-gray-300 {
+            border: 1px solid var(--border-gray-300);
+        }
+
+        .border-gray-400 {
+            border: 1px solid var(--border-gray-400);
+        }
+
+        .border-gray-900 {
+            border: 1px solid var(--FindMyStay-dark);
+        }
+
+        .border-none {
+            border: none !important;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .items-start {
+            align-items: flex-start;
+        }
+
+        .space-x-1>*+* {
+            margin-left: 0.25rem;
+        }
+
+        .space-x-2>*+* {
+            margin-left: 0.5rem;
+        }
+
+        .space-x-3>*+* {
+            margin-left: 0.75rem;
+        }
+
+        .space-x-4>*+* {
+            margin-left: 1rem;
+        }
+
+        .space-y-2>*+* {
+            margin-top: 0.5rem;
+        }
+
+        .space-y-6>*+* {
+            margin-top: 1.5rem;
+        }
+
+        .space-y-12>*+* {
+            margin-top: 3rem;
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0;
+        }
+
+        .leading-relaxed {
+            line-height: 1.625;
+        }
+
+        .hover\:bg-gray-100:hover {
+            background-color: #f3f4f6;
+        }
+
+        .hover\:bg-gray-50:hover {
+            background-color: #f9fafb;
+        }
+
+        .hover\:text-FindMyStay-red:hover {
+            color: var(--FindMyStay-red);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-gray-300);
+        }
+
+        /* Hide Scrollbar for Mobile Carousel */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            overflow: auto;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* --------------------------
+           HEADER & NAVIGATION
+           -------------------------- */
+        header {
+            margin-bottom: 1.5rem;
+        }
+
+        .header-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--text-gray-700);
+        }
+
+        @media (min-width: 768px) {
+            .header-details {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .header-action-button {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* --------------------------
+           IMAGE GALLERY 
+           -------------------------- */
+        .gallery-grid {
+            display: none;
+            /* hidden md:grid */
+            gap: 0.5rem;
+            /* gap-2 */
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, minmax(0, 1fr));
+                height: 500px;
+                /* fixed height for aesthetic balance */
+            }
+        }
+
+        .main-image-wrapper {
+            grid-column: span 2 / span 2;
+            grid-row: span 2 / span 2;
+            position: relative;
+        }
+
+        .main-image-wrapper img {
+            border-top-left-radius: 0.75rem;
+            border-bottom-left-radius: 0.75rem;
+        }
+
+        .image-group-1 {
+            grid-column: span 2 / span 2;
+            grid-row: span 1 / span 1;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .image-group-2 {
+            grid-column: span 2 / span 2;
+            grid-row: span 1 / span 1;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .image-item {
+            position: relative;
+            flex: 1 1 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-item:first-child img {
+            /* No radius change needed for inner images */
+        }
+
+        .image-group-1 .image-item:last-child img {
+            border-top-right-radius: 0.75rem;
+        }
+
+        .image-group-2 .image-item:last-child img {
+            border-bottom-right-radius: 0.75rem;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: black;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image-item:hover .overlay {
+            opacity: 0.1;
+        }
+
+        .view-360-btn {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: white;
+            color: var(--FindMyStay-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .view-360-btn:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Mobile Carousel */
+        .mobile-carousel {
+            display: block;
+            /* md:hidden */
+            width: 100%;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            border-radius: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-carousel {
+                display: none;
+            }
+        }
+
+        .carousel-track {
+            display: flex;
+        }
+
+        .carousel-slide {
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            width: 100vw;
+            /* Take full viewport width */
+            height: 18rem;
+            /* h-72 */
+            position: relative;
+        }
+
+        /* Override width on main container max width */
+        @media (min-width: 640px) and (max-width: 767px) {
+            .carousel-slide {
+                width: calc(100vw - 2rem);
+                /* Account for padding */
+            }
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.5rem;
+            gap: 0.25rem;
+        }
+
+        .dot {
+            width: 0.25rem;
+            height: 0.25rem;
+            border-radius: 50%;
+            background-color: #9ca3af;
+            /* bg-gray-400 */
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            width: 0.5rem;
+            background-color: var(--FindMyStay-dark);
+        }
+
+        /* --------------------------
+           MAIN CONTENT GRID 
+           -------------------------- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            /* gap-10 */
+        }
+
+        @media (min-width: 1024px) {
+            .content-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .details-column {
+            grid-column: span 1 / span 1;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-gray-300);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 1024px) {
+            .details-column {
+                grid-column: span 2 / span 2;
+                border-bottom: none;
+            }
+        }
+
+        /* Host Info & Summary Blocks */
+        .host-info-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-gray-300);
+        }
+
+        .host-avatar {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .key-points-block {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-gray-300);
+        }
+
+        .key-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            /* space-x-4 */
+        }
+
+        .key-point+.key-point {
+            margin-top: 1.5rem;
+        }
+
+        /* space-y-6 */
+
+        /* Description Content Toggle */
+        .description-content {
+            max-height: 200px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-gray-300);
+        }
+
+        .description-content.expanded {
+            max-height: 2000px;
+            /* Large value */
+            transition: max-height 1s ease-in;
+        }
+
+        .show-more-button {
+            display: flex;
+            align-items: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            background: none;
+            border: none;
+            padding: 0;
+            color: var(--FindMyStay-dark);
+            cursor: pointer;
+        }
+
+        .show-more-button.hidden-button {
+            display: none;
+        }
+
+        /* Amenities */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem 2.5rem;
+            /* gap-y-4 gap-x-10 */
+        }
+
+        @media (min-width: 640px) {
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            /* space-x-3 */
+            color: var(--text-gray-800);
+        }
+
+        .show-all-btn {
+            border: 1px solid var(--FindMyStay-dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        /* --------------------------
+           RESERVATION CARD (Desktop Only)
+           -------------------------- */
+        .reservation-column {
+            display: none;
+            /* hidden md:block */
+        }
+
+        @media (min-width: 1024px) {
+            .reservation-column {
+                display: block;
+                grid-column: span 1 / span 1;
+            }
+        }
+
+        .reservation-card {
+            padding: 1.5rem;
+            border: 1px solid var(--border-gray-300);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 2.5rem;
+            /* lg:top-10 */
+        }
+
+        .price-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Booking Form */
+        .booking-form {
+            border: 1px solid var(--border-gray-400);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .date-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-bottom: 1px solid var(--border-gray-400);
+        }
+
+        .date-input-field {
+            padding: 0.75rem;
+            cursor: pointer;
+        }
+
+        .date-input-field:hover {
+            background-color: #f3f4f6;
+        }
+
+        .date-input-field:first-child {
+            border-right: 1px solid var(--border-gray-400);
+        }
+
+        .guests-input-field {
+            padding: 0.75rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .guests-input-field:hover {
+            background-color: #f3f4f6;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Custom styling for date input */
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            font-size: 0.875rem;
+            color: var(--FindMyStay-dark);
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin-top: 0.125rem;
+            line-height: 1.25rem;
+            box-sizing: border-box;
+        }
+
+        input[type="date"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+        }
+
+        /* Hide the default date picker icon */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Hide default number input spinners */
+        #guest-count-input {
+            -moz-appearance: textfield;
+        }
+
+        #guest-count-input::-webkit-outer-spin-button,
+        #guest-count-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .check-availability-btn {
+            width: 100%;
+            background-color: #0875de;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .check-availability-btn:hover {
+            background-color: #0875de;
+            /* Slightly darker red */
+        }
+
+        .price-breakdown {
+            color: var(--text-gray-700);
+        }
+
+        .price-breakdown>div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .price-breakdown>div+div {
+            margin-top: 0.5rem;
+        }
+
+        /* space-y-2 */
+        .total-price {
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-gray-300);
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 1.125rem;
+            /* text-lg */
+            color: var(--FindMyStay-dark);
+        }
+
+
+        /* --------------------------
+           MOBILE STICKY FOOTER 
+           -------------------------- */
+        .mobile-sticky-footer {
+            display: flex;
+            /* md:hidden */
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: white;
+            padding: 1rem;
+            /* p-4 */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .mobile-sticky-footer {
+                display: none;
+            }
+        }
+
+        /* Ensure main content has space above the fixed mobile footer */
+        #main-content {
+            padding-bottom: 3rem;
+            /* Default space for regular footer */
+        }
+
+        @media (max-width: 767px) {
+            #main-content {
+                padding-bottom: 6rem;
+                /* Space for the 1rem padding + ~3rem height of the footer */
+            }
+        }
+
+        .reserve-btn-mobile {
+            background-color: var(--FindMyStay-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --------------------------
+           REVIEW SECTION 
+           -------------------------- */
+        .review-summary-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem 3rem;
+            /* gap-x-12 gap-y-6 */
+        }
+
+        @media (min-width: 768px) {
+            .review-summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .review-bar-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-bar-container {
+            width: 10rem;
+            /* w-40 */
+            height: 0.25rem;
+            /* h-1 */
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--FindMyStay-dark);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+
+<body class="bg-white font-sans text-FindMyStay-dark">
+
+    <!-- Main Container -->
+    <div class="main-container" id="main-content">
+
+        <!-- 1. Header & Title -->
+        <header class="mb-6">
+            <h1 class="text-3xl font-semibold mb-2">Luxury 2 BHK Flat Near Benaulim Beach</h1>
+            <div class="header-details">
+                <div class="flex items-center mb-2">
+                    <span class="font-semibold flex items-center">
+                        <i data-lucide="star" class="w-4 h-4 fill-FindMyStay-dark text-FindMyStay-dark mr-1"></i>
+                        4.89
+                    </span>
+                    <span class="mx-2">•</span>
+                    <a href="#reviews" class="underline font-medium hover:text-FindMyStay-red">147 reviews</a>
+                    <span class="mx-2">•</span>
+                    <span>Benaulim, Goa, India</span>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="header-action-button hover:bg-FindMyStay-light-gray transition">
+                        <i data-lucide="share-2" class="w-4 h-4"></i>
+                        <span class="underline font-medium ml-1">Share</span>
+                    </button>
+                    <button id="save-btn" class="header-action-button hover:bg-FindMyStay-light-gray transition">
+                        <i data-lucide="heart" class="w-4 h-4"></i>
+                        <span class="underline font-medium ml-1">Save</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. Image Gallery (Responsive Grid/Single Image) -->
+        <section class="mb-10">
+            <div class="gallery-grid">
+                <!-- Large Main Image -->
+                <div class="main-image-wrapper image-item">
+                    <img src="https://placehold.co/1000x800/222/fff?text=Main+Living+Area" alt="Main Living Area"
+                        class="w-full h-full object-cover cursor-pointer">
+                    <div class="overlay"></div>
+                    <!-- 360 Degree View Button --><button class="view-360-btn">
+                        <i data-lucide="globe" class="w-4 h-4 mr-2"></i>
+                        <span>360° View</span>
+                    </button>
+                </div>
+                <!-- Smaller Gallery Images -->
+                <div class="image-group-1">
+                    <div class="image-item">
+                        <img src="https://placehold.co/500x400/333/fff?text=Bedroom+1" alt="Bedroom 1"
+                            class="w-full h-full object-cover cursor-pointer">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://placehold.co/500x400/444/fff?text=Pool+View" alt="Pool View"
+                            class="w-full h-full object-cover cursor-pointer">
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+                <div class="image-group-2">
+                    <div class="image-item">
+                        <img src="https://placehold.co/500x400/555/fff?text=Kitchen" alt="Kitchen"
+                            class="w-full h-full object-cover cursor-pointer">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="image-item">
+                        <img src="https://placehold.co/500x400/666/fff?text=Bathroom" alt="Bathroom"
+                            class="w-full h-full object-cover cursor-pointer">
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Fullscreen 360° View Overlay -->
+            <div id="fullscreen-360" style="
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: #000;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+">
+                <button id="close-360" style="
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  ">← Back to Gallery</button>
+
+                <img src="360.jpg" alt="360° View" style="
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #000;
+  ">
+            </div>
+
+
+            <!-- Mobile Image Carousel -->
+            <div id="mobile-carousel" class="mobile-carousel scrollbar-hide">
+                <div class="carousel-track">
+                    <div class="carousel-slide relative">
+                        <img src="https://placehold.co/1000x800/222/fff?text=Main+Living+Area" alt="Main Living Area"
+                            class="w-full h-full object-cover">
+                        <!-- 360 Degree View Button for Mobile --><button class="view-360-btn">
+                            <i data-lucide="globe" class="w-4 h-4 mr-2"></i>
+                            <span>360° View</span>
+                        </button>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://placehold.co/500x400/333/fff?text=Bedroom+1" alt="Bedroom 1"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://placehold.co/500x400/444/fff?text=Pool+View" alt="Pool View"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://placehold.co/500x400/555/fff?text=Kitchen" alt="Kitchen"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="carousel-dots" id="carousel-dots">
+                    <!-- Dots will be populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Main Content Layout (Listing Details and Reservation Card) -->
+        <div class="content-grid">
+
+            <!-- Left Column: Listing Details (70%) -->
+            <div class="details-column">
+
+                <!-- Listing Info & Host Profile -->
+                <div class="host-info-block pb-6 mb-6">
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-1">Entire flat hosted by Anjali</h2>
+                        <p class="text-gray-600">4 guests • 2 bedrooms • 2 beds • 2 baths</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <img src="https://placehold.co/60x60/f0f0f0/333?text=Host" alt="Host Profile"
+                            class="host-avatar border-gray-200">
+                    </div>
+                </div>
+
+                <!-- Key Selling Points -->
+                <div class="key-points-block pb-6 mb-6">
+                    <div class="key-point">
+                        <i data-lucide="key" class="w-6 h-6 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-medium text-lg">Self check-in</h3>
+                            <p class="text-gray-600 text-sm">Check yourself in with the lockbox.</p>
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <i data-lucide="map-pin" class="w-6 h-6 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-medium text-lg">Great location</h3>
+                            <p class="text-gray-600 text-sm">95% of recent guests gave the location a 5-star rating.</p>
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <i data-lucide="calendar" class="w-6 h-6 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-medium text-lg">Free cancellation</h3>
+                            <p class="text-gray-600 text-sm">Cancel before your trip and get a full refund.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Description -->
+                <div class="pb-6 mb-6">
+                    <div class="description-content" id="description-content">
+                        <p class="text-gray-800 leading-relaxed mb-4">
+                            Welcome to your luxurious home away from home in South Goa! This spacious 2 BHK apartment
+                            offers the perfect blend of modern comfort and coastal charm. Located just a short walk from
+                            the serene Benaulim Beach, it’s an ideal spot for couples, families, or small groups looking
+                            for a relaxing Goan getaway.
+                        </p>
+                        <p class="text-gray-800 leading-relaxed mb-4">
+                            The space features two beautifully appointed bedrooms, a fully equipped modern kitchen, and
+                            a comfortable living room with a dedicated workspace. Enjoy your morning coffee on the
+                            private balcony overlooking lush greenery and the community pool. The apartment is located
+                            in a secured, gated complex with 24/7 security.
+                        </p>
+                        <p class="text-gray-800 leading-relaxed">
+                            Guests have access to the large communal swimming pool, gymnasium, and reserved parking
+                            space. High-speed fiber internet (100Mbps) ensures you stay connected, perfect for remote
+                            working. Linens, towels, and basic toiletries are provided. We look forward to hosting you!
+                        </p>
+                    </div>
+                    <button id="show-more-btn" class="show-more-button">
+                        Show more <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Amenities Section -->
+                <div class="pb-6 mb-6">
+                    <h2 class="text-2xl font-semibold mb-6">What this place offers</h2>
+                    <div class="amenities-grid">
+                        <div class="amenity-item"><i data-lucide="wifi" class="w-5 h-5"></i><span>High-speed
+                                Wi-Fi</span></div>
+                        <div class="amenity-item"><i data-lucide="bath-water" class="w-5 h-5"></i><span>Private Pool
+                                Access</span></div>
+                        <div class="amenity-item"><i data-lucide="air-vent" class="w-5 h-5"></i><span>Air
+                                conditioning</span></div>
+                        <div class="amenity-item"><i data-lucide="utensils-crossed"
+                                class="w-5 h-5"></i><span>Kitchen</span></div>
+                        <div class="amenity-item"><i data-lucide="tv" class="w-5 h-5"></i><span>Smart TV</span></div>
+                        <div class="amenity-item"><i data-lucide="car" class="w-5 h-5"></i><span>Free parking on
+                                premises</span></div>
+                        <div class="amenity-item"><i data-lucide="paw-print" class="w-5 h-5"></i><span>Pets
+                                allowed</span></div>
+                        <div class="amenity-item"><i data-lucide="building-2" class="w-5 h-5"></i><span>Security
+                                system</span></div>
+                    </div>
+                    <button class="show-all-btn mt-6 hover:bg-gray-50 transition">
+                        Show all 25 amenities
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Column: Reservation Card (30%) -->
+            <div class="reservation-column">
+                <!-- Desktop Reservation Card (Sticky) -->
+                <div class="reservation-card">
+                    <div class="price-details">
+                        <div class="text-2xl font-semibold">
+                            ₹2,500 <span class="text-base font-normal">night</span>
+                        </div>
+                        <div class="text-sm font-semibold flex items-center">
+                            <i data-lucide="star" class="w-4 h-4 fill-FindMyStay-dark text-FindMyStay-dark mr-1"></i>
+                            4.89 <span class="text-gray-600 font-normal ml-1">(147 reviews)</span>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <div class="booking-form">
+                        <!-- Check In/Out -->
+                        <div class="date-inputs">
+                            <div class="date-input-field">
+                                <label for="check-in-date">CHECK-IN</label>
+                                <input type="date" id="check-in-date" placeholder="Add dates">
+                            </div>
+                            <div class="date-input-field">
+                                <label for="check-out-date">CHECKOUT</label>
+                                <input type="date" id="check-out-date" placeholder="Add dates">
+                            </div>
+                        </div>
+                        <!-- Guests -->
+                        <div class="guests-input-field">
+                            <label for="guest-count-input">GUESTS</label>
+                            <div class="flex justify-between items-center">
+                                <input type="number" id="guest-count-input" value="1" min="1" max="4"
+                                    aria-label="Number of Guests">
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-600 ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="check-availability-btn mb-4">
+                        Check availability
+                    </button>
+
+                    <!-- Price Details -->
+                    <div class="price-breakdown text-gray-700">
+                        <div>
+                            <span class="underline">₹2,500 x 3 nights</span>
+                            <span>₹7,500</span>
+                        </div>
+                        <div>
+                            <span class="underline">Cleaning fee</span>
+                            <span>₹500</span>
+                        </div>
+                        <div>
+                            <span class="underline">Service fee</span>
+                            <span>₹800</span>
+                        </div>
+                        <div class="total-price">
+                            <span>Total before taxes</span>
+                            <span>₹8,800</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Desktop Reservation Card -->
+        </div>
+
+        <!-- 4. Reviews Section (Placeholder) -->
+        <hr class="mt-12 mb-10">
+        <section id="reviews" class="mb-20">
+            <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                <i data-lucide="star" class="w-6 h-6 fill-FindMyStay-dark text-FindMyStay-dark mr-2"></i>
+                4.89 • 147 reviews
+            </h2>
+
+            <div class="review-summary-grid">
+                <!-- Review Summary Item -->
+                <div class="review-bar-item">
+                    <span class="text-gray-800">Cleanliness</span>
+                    <div class="flex items-center space-x-2">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 98%;"></div>
+                        </div>
+                        <span class="text-sm font-medium">4.9</span>
+                    </div>
+                </div>
+                <!-- Other Review Summary Items... -->
+                <div class="review-bar-item">
+                    <span class="text-gray-800">Communication</span>
+                    <div class="flex items-center space-x-2">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 99%;"></div>
+                        </div>
+                        <span class="text-sm font-medium">5.0</span>
+                    </div>
+                </div>
+                <div class="review-bar-item">
+                    <span class="text-gray-800">Check-in</span>
+                    <div class="flex items-center space-x-2">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 95%;"></div>
+                        </div>
+                        <span class="text-sm font-medium">4.8</span>
+                    </div>
+                </div>
+                <div class="review-bar-item">
+                    <span class="text-gray-800">Accuracy</span>
+                    <div class="flex items-center space-x-2">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 97%;"></div>
+                        </div>
+                        <span class="text-sm font-medium">4.9</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="show-all-btn mt-8 hover:bg-gray-50 transition">
+                Show all 147 reviews
+            </button>
+        </section>
+
+        <!-- Placeholder Footer (Simple) -->
+        <hr class="mb-4">
+        <footer class="text-xs text-gray-600 py-4">
+            <p>&copy; 2024 FindMyStay, Inc. • Privacy • Terms • Sitemap • Company details</p>
+        </footer>
+    </div>
+    <!-- End Main Container --><!-- Mobile Sticky Footer for Reservation Card (Always visible on small screens) -->
+    <div class="mobile-sticky-footer">
+        <div>
+            <div class="text-xl font-semibold">₹2,500 <span class="text-base font-normal">night</span></div>
+            <button class="text-sm font-medium underline">
+                Check dates
+            </button>
+        </div>
+        <button class="reserve-btn-mobile">
+            Reserve
+        </button>
+    </div>
+    <!-- End Mobile Sticky Footer -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Image Carousel Logic for Mobile
+        const carousel = document.getElementById('mobile-carousel');
+        const carouselDotsContainer = document.getElementById('carousel-dots');
+        const images = carousel ? carousel.querySelectorAll('.carousel-slide') : [];
+        const totalImages = images.length;
+
+        if (carousel) {
+            // Create dots
+            for (let i = 0; i < totalImages; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (i === 0) {
+                    dot.classList.add('active');
+                }
+                carouselDotsContainer.appendChild(dot);
+            }
+            const dots = carouselDotsContainer.querySelectorAll('.dot');
+
+            // Update dots on scroll
+            carousel.addEventListener('scroll', () => {
+                const scrollLeft = carousel.scrollLeft;
+                // Use a dynamic width based on the slide size to handle responsive slides
+                const width = images[0] ? images[0].offsetWidth : carousel.offsetWidth;
+
+                // Calculate the index of the image that is mostly visible
+                const activeIndex = Math.round(scrollLeft / width);
+
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === activeIndex) {
+                        dot.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // 2. Show More / Show Less Description Logic
+        const descriptionContent = document.getElementById('description-content');
+        const showMoreBtn = document.getElementById('show-more-btn');
+
+        if (showMoreBtn && descriptionContent) {
+
+            // Check if content is actually truncated
+            setTimeout(() => {
+                // Ensure the element is measured after content is rendered
+                if (descriptionContent.scrollHeight <= 200) {
+                    // If content is short, hide the button
+                    showMoreBtn.classList.add('hidden-button');
+                    // Remove the max-height CSS class so it's fully visible
+                    descriptionContent.classList.remove('description-content');
+                }
+            }, 100);
+
+            let isExpanded = false;
+
+            showMoreBtn.addEventListener('click', () => {
+                isExpanded = !isExpanded;
+
+                if (isExpanded) {
+                    descriptionContent.classList.add('expanded');
+                    showMoreBtn.innerHTML = 'Show less <i data-lucide="chevron-up" class="w-4 h-4 ml-1"></i>';
+                } else {
+                    descriptionContent.classList.remove('expanded');
+                    showMoreBtn.innerHTML = 'Show more <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>';
+                    // Scroll back up to the top of the description box
+                    descriptionContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                // Re-initialize Lucide Icons for the new chevron direction
+                lucide.createIcons();
+            });
+        }
+
+        // 3. Save Button Toggle (Heart Icon)
+        const saveBtn = document.getElementById('save-btn');
+        let isSaved = false;
+
+        if (saveBtn) {
+            saveBtn.addEventListener('click', () => {
+                const heartIcon = saveBtn.querySelector('i');
+                isSaved = !isSaved;
+
+                if (isSaved) {
+                    // Filled heart
+                    heartIcon.classList.add('fill-FindMyStay-red', 'text-FindMyStay-red');
+                    heartIcon.classList.remove('text-FindMyStay-dark');
+                } else {
+                    // Outline heart
+                    heartIcon.classList.remove('fill-FindMyStay-red', 'text-FindMyStay-red');
+                    heartIcon.classList.add('text-FindMyStay-dark');
+                }
+            });
+        }
+        // 4. 360° View Toggle (Fullscreen Mode)
+        const viewButtons = document.querySelectorAll('.view-360-btn');
+        const fullscreen360 = document.getElementById('fullscreen-360');
+        const close360Btn = document.getElementById('close-360');
+
+        if (viewButtons && fullscreen360 && close360Btn) {
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Show fullscreen overlay
+                    fullscreen360.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Prevent scroll
+                });
+            });
+
+            close360Btn.addEventListener('click', () => {
+                fullscreen360.style.display = 'none';
+                document.body.style.overflow = ''; // Restore scroll
+            });
+        }
+
+    </script>
+</body>
+
+</html>

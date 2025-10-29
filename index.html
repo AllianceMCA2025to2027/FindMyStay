@@ -14,19 +14,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./chatbot/chatbot.css">
 
 </head>
 
 <body>
-    <!-- mobile sticky menu starts -->
-    <!-- <div class="mobile-sticky-menu-container">
-        <div class="mobile-sticky-menu-search">
-            <img src="./nav-icons/search.png" >
-            <p class="mobile-search-p">Start your search</p>
-        </div> -->
-    </div>
     <header>
         <div class="container">
             <nav class="main-nav">
@@ -36,27 +29,99 @@
                 </div>
 
                 <div class="trip-planer-container">
-                    <div class="anywhere-container">
+                    <div class="anywhere-container search-dropdown-trigger">
                         <img src="./nav-icons/14.jpg">
-                        <p class="planner-text">Anywhere</p>
+                        <p class="planner-text" id="selected-city">Anywhere</p>
+                        <div class="search-dropdown city-dropdown">
+                            <input type="text" class="city-search-input" placeholder="Search cities...">
+                            <ul class="city-list">
+                                <li data-city="Mumbai">Mumbai</li>
+                                <li data-city="Delhi">Delhi</li>
+                                <li data-city="Bangalore">Bangalore</li>
+                                <li data-city="Hyderabad">Hyderabad</li>
+                                <li data-city="Chennai">Chennai</li>
+                                <li data-city="Kolkata">Kolkata</li>
+                                <li data-city="Pune">Pune</li>
+                                <li data-city="Ahmedabad">Ahmedabad</li>
+                                <li data-city="Jaipur">Jaipur</li>
+                                <li data-city="Surat">Surat</li>
+                                <li data-city="Lucknow">Lucknow</li>
+                                <li data-city="Kanpur">Kanpur</li>
+                                <li data-city="Nagpur">Nagpur</li>
+                                <li data-city="Indore">Indore</li>
+                                <li data-city="Bhopal">Bhopal</li>
+                                <li data-city="Visakhapatnam">Visakhapatnam</li>
+                                <li data-city="Vadodara">Vadodara</li>
+                                <li data-city="Goa">Goa</li>
+                                <li data-city="Chandigarh">Chandigarh</li>
+                                <li data-city="Kochi">Kochi</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div class="pipe-container">
                         <div class="pipe"></div>
                     </div>
 
-                    <div class="anytime-container">
-                        <p class="planner-text">Anytime</p>
+                    <div class="anytime-container search-dropdown-trigger">
+                        <p class="planner-text" id="selected-dates">Anytime</p>
+                        <div class="search-dropdown calendar-dropdown">
+                            <div class="date-selector">
+                                <div class="date-input-group">
+                                    <label>Check-in</label>
+                                    <input type="date" id="checkin-date" class="date-input">
+                                </div>
+                                <div class="date-input-group">
+                                    <label>Check-out</label>
+                                    <input type="date" id="checkout-date" class="date-input">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="pipe-container">
                         <div class="pipe"></div>
                     </div>
 
-                    <div class="add-guest-container">
-                        <p class="planner-text">Add guests</p>
+                    <div class="add-guest-container search-dropdown-trigger">
+                        <p class="planner-text" id="guest-summary">Add guests</p>
+                        <div class="search-dropdown guest-dropdown">
+                            <div class="guest-row">
+                                <div class="guest-info">
+                                    <span class="guest-label">Adults</span>
+                                    <span class="guest-sublabel">Age 13+</span>
+                                </div>
+                                <div class="guest-counter">
+                                    <button class="counter-btn" data-action="decrease" data-type="adults">-</button>
+                                    <span class="counter-value" id="adults-count">0</span>
+                                    <button class="counter-btn" data-action="increase" data-type="adults">+</button>
+                                </div>
+                            </div>
+                            <div class="guest-row">
+                                <div class="guest-info">
+                                    <span class="guest-label">Children</span>
+                                    <span class="guest-sublabel">Age 2-12</span>
+                                </div>
+                                <div class="guest-counter">
+                                    <button class="counter-btn" data-action="decrease" data-type="children">-</button>
+                                    <span class="counter-value" id="children-count">0</span>
+                                    <button class="counter-btn" data-action="increase" data-type="children">+</button>
+                                </div>
+                            </div>
+                            <div class="guest-row">
+                                <div class="guest-info">
+                                    <span class="guest-label">Pets</span>
+                                    <span class="guest-sublabel">Service animals welcome</span>
+                                </div>
+                                <div class="guest-counter">
+                                    <button class="counter-btn" data-action="decrease" data-type="pets">-</button>
+                                    <span class="counter-value" id="pets-count">0</span>
+                                    <button class="counter-btn" data-action="increase" data-type="pets">+</button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="search-icon-container">
-                            <a href="#"><img src="./nav-icons/search.png" alt=""></a>
+                            <a href="#" id="search-btn"><img src="./nav-icons/search.png" alt=""></a>
                         </div>
                     </div>
 
@@ -78,7 +143,6 @@
         </div>
 
     </header>
-    <!-- mobile menu -->
     <div class="container">
         <div class="mobile-menu-fixed">
             <div class="mobile-menu-container">
@@ -112,7 +176,7 @@
                         <a href="#" class="mobile-menu-link">Find a co-host</a>
                     </li>
                     <li class="mobile-menu-li">
-                        <a href="#" class="mobile-menu-link">Gift cards</a>
+                        <a href="./giftcards.html" class="mobile-menu-link">Gift cards</a>
                     </li>
                     <li class="divider"></li>
                     <li class="mobile-menu-li">
@@ -122,20 +186,20 @@
             </div>
         </div>
     </div>
-    <!-- mobile menu End-->
-
     <main>
         <div class="container">
             <section class="destinations">
-                <!-- ROW 1 STARTS -->
                 <div id="row-1" class="destinations-row">
                     <h2 class="destination-heading">Popular Homes in Bangalore</h2>
                     <div class="destinations-grid-container">
+
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-1/1.jpg" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm style =" color :#fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-1/1.jpg" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm style =" color :#fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Skyline Retreat</h4>
@@ -145,9 +209,12 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-2/102156ce-c4d9-48af-9429-3c5697015e75.jpeg" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-2/102156ce-c4d9-48af-9429-3c5697015e75.jpeg"
+                                        class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Urban Nest Apartment</h4>
@@ -157,9 +224,12 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-2/f51043e1-a11e-433e-93ed-8eda53b496d8.jpeg" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-2/f51043e1-a11e-433e-93ed-8eda53b496d8.jpeg"
+                                        class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Palm Grove Stay</h4>
@@ -169,9 +239,12 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-3/239f1761-cd8f-4e67-94d2-e72b91e6292a.jpg" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-3/239f1761-cd8f-4e67-94d2-e72b91e6292a.jpg"
+                                        class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Lakeside Horizon Villa</h4>
@@ -181,9 +254,12 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-4/0dd35ed2-27c6-49ac-b04e-37daf25a8ba5.jpeg" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-4/0dd35ed2-27c6-49ac-b04e-37daf25a8ba5.jpeg"
+                                        class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Blue Orchid Residency</h4>
@@ -193,9 +269,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-5/1.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-5/1.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">The White Lotus Inn</h4>
@@ -205,9 +283,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-5/4.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-5/4.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Pearl vally Residency</h4>
@@ -217,17 +297,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- ROW 1 ENDS -->
-                <!-- ROW 2 STARTS -->
-                <!-- ROW 2 STARTS -->
                 <div id="row-2" class="destinations-row">
                     <h2 class="destination-heading">Top Rated Stays in Bangalore</h2>
                     <div class="destinations-grid-container">
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-6/1.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-6/1.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Golden Leaf Apartment</h4>
@@ -236,9 +315,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-7/3.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-7/3.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Garden View Suite</h4>
@@ -247,9 +328,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-6/4.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-6/4.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">The Sapphire Stay</h4>
@@ -258,9 +341,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-7/5.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-7/5.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Amber Sky Apartment</h4>
@@ -269,9 +354,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-8/1.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-8/1.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">The Velvet Nest</h4>
@@ -280,9 +367,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-8/3.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-8/3.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Horizon Comfort Inn</h4>
@@ -291,9 +380,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-9/1.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-9/1.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Lotus Lake Apartment</h4>
@@ -302,18 +393,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- ROW 2 ENDS -->
-
-
-                <!-- ROW 3 STARTS -->
                 <div id="row-3" class="destinations-row">
                     <h2 class="destination-heading">Affordable Homes in Bangalore</h2>
                     <div class="destinations-grid-container">
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-10/1avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-10/1avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Sunrise Stay</h4>
@@ -322,9 +411,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-7/2.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-7/2.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Maple Tree Residency</h4>
@@ -333,9 +424,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-12/1.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-12/1.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Urban Delight</h4>
@@ -344,9 +437,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-12/3.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-12/3.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Olive Grove Stay</h4>
@@ -355,9 +450,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-12/4.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-12/4.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">The Cozy Corner</h4>
@@ -366,9 +463,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-13/1.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-13/1.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Rosewood Suites</h4>
@@ -377,9 +476,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-13/5.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-13/5.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Silver Star Residency</h4>
@@ -388,18 +489,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- ROW 3 ENDS -->
-
-
-                <!-- ROW 4 STARTS -->
                 <div id="row-4" class="destinations-row">
                     <h2 class="destination-heading">Luxury Villas in Bangalore</h2>
                     <div class="destinations-grid-container">
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-6/3.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-6/3.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Emerald Bay Villa</h4>
@@ -408,9 +507,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-13/4.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-13/4.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Crystal Waters Estate</h4>
@@ -419,9 +520,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-10/3.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-10/3.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">The Royal Breeze Mansion</h4>
@@ -430,9 +533,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-12/2.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-12/2.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Azure Valley Retreat</h4>
@@ -441,9 +546,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-10/4.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-10/4.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Coral View Manor</h4>
@@ -452,9 +559,12 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-4/ffcd187e-4c20-4c86-8952-a907c79e4b8c.jpeg" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-4/ffcd187e-4c20-4c86-8952-a907c79e4b8c.jpeg"
+                                        class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">Pearl Mirage Villa</h4>
@@ -463,9 +573,11 @@
                         </div>
                         <div class="destination-card">
                             <div class="destination-img-container">
-                                <img src="./property/property-8/5.avif" class="destination-img">
-                                <p class="guest-fevorite">Guest favorite</p>
-                                <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                <a href="./gallary.html">
+                                    <img src="./property/property-8/5.avif" class="destination-img">
+                                    <p class="guest-fevorite">Guest favorite</p>
+                                    <i class="fa-regular fa-heart fa-sm" style="color: #fff;"></i>
+                                </a>
                             </div>
                             <div class="destination-text-container">
                                 <h4 class="destination-text-header">The Grand Olive Estate</h4>
@@ -474,14 +586,133 @@
                         </div>
                     </div>
                 </div>
-                <!-- ROW 4 ENDS -->
-
             </section>
         </div>
     </main>
+    <!-- Chatbot Button -->
+    <button class="chatbot-button" id="chatbotButton">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>Need help finding a stay?</span>
+    </button>
+
+    <!-- ================= Footer ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Info -->
+            <div class="footer-section about">
+                <h2>FindMyStay</h2>
+                <p>
+                    Your trusted partner for discovering comfort and luxury stays across India.
+                    We help travelers find accommodations that fit their style, budget, and needs — effortlessly.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="giftcards.html">Gift Cards & Offers</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="footer-section support">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-section newsletter">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to get the latest travel offers and updates from FindMyStay.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> FindMyStay. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/5f2b75d8a3.js" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <div class="chat-header-content">
+                <div class="chat-header-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </div>
+                <div class="chat-header-text">
+                    <h3>FindMyStay</h3>
+                    <p>Always here to help</p>
+                </div>
+            </div>
+            <button class="close-btn" id="closeBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
 
+        <div class="quick-replies" id="quickReplies">
+            <p>Quick options:</p>
+            <div class="quick-replies-grid">
+                <button class="quick-reply-btn" data-keyword="budget">💰 Budget options</button>
+                <button class="quick-reply-btn" data-keyword="luxury">🏰 Luxury villas</button>
+                <button class="quick-reply-btn" data-keyword="popular">🌟 Popular homes</button>
+                <button class="quick-reply-btn" data-keyword="rated">⭐ Top rated</button>
+            </div>
+        </div>
+
+        <div class="messages-area" id="messagesArea"></div>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+                <button class="send-btn" id="sendBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <p class="input-footer">Powered by FindMyStay AI Assistant</p>
+        </div>
+    </div>
+
+
+    <script src="chatbot/chatbot.js"></script>
     <script src="script.js"></script>
 
 </body>

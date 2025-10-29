@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindMyStay | Gift Cards & Offers</title>
+
+    <link rel="icon" href="./icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        :root {
+            --primary-color: #336fae;
+            --secondary-color: #f7f7f7;
+            --text-color: #333;
+            --accent-color: #ff5a5f;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        .giftcard-main {
+            padding: 3rem 0;
+            background-color: var(--secondary-color);
+            min-height: 80vh;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            padding-top: 1rem;
+        }
+
+        .section-header h1,
+        .section-header h2 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .card-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .gift-card-container {
+            width: 350px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .gift-card {
+            background: linear-gradient(135deg, var(--primary-color), #2a5a8a);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            transition: transform 0.4s, box-shadow 0.4s;
+            transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+
+        .gift-card-container:hover .gift-card {
+            transform: translateY(-10px) rotateY(3deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-logo h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .card-details {
+            margin-top: 1rem;
+            flex-grow: 1;
+        }
+
+        .offer-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            word-break: break-word;
+        }
+
+        .offer-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            word-break: break-word;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 1rem;
+            flex-shrink: 0;
+        }
+
+        .card-value {
+            font-size: 2.3rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .buy-btn {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 8px 18px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .buy-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* --- PARTNER OFFERS --- */
+        .partner-offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .offer-box {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #fff;
+        }
+
+        .offer-box:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-box-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .partner-logo {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+
+        .offer-details h4 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .offer-details p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .code-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f8ff;
+            border: 1px dashed var(--primary-color);
+            border-radius: 5px;
+            padding: 10px;
+            font-weight: 700;
+        }
+
+        .copy-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+            font-size: 0.8rem;
+        }
+
+        .copy-btn:hover {
+            background-color: #2a5a8a;
+        }
+
+        @media screen and (max-width: 768px) {
+            .section-header h1 {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                gap: 1.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .gift-card-container {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .partner-offers-grid {
+                padding: 1rem;
+                gap: 1.5rem;
+            }
+
+            .offer-details h4 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo-container">
+                    <a href="./index.html"><img src="./logo.png" alt="FindMyStay logo" class="nav-logo" /></a>
+                    <a href="./index.html"><img src="./icon.png" alt="FindMyStay mobile logo"
+                            class="mobile-logo" /></a>
+                </div>
+
+                <ul class="nav-menu-links">
+                    <li><a href="#" class="nav-link">Become a host</a></li>
+                    <!-- Removed Gift Card link -->
+                    <li><a href="#" class="nav-link"><img src="./language-icon.svg" alt="Language" /></a></li>
+                    <li><a href="#" class="nav-link"><i class="fa-solid fa-bars fa-lg" style="color: black;"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="giftcard-main">
+        <div class="container">
+            <div class="section-header">
+                <h1>FindMyStay Gift Cards</h1>
+                <p>The perfect present for any occasion. Instant e-delivery!</p>
+            </div>
+
+            <div class="card-grid">
+                <!-- Card 1 -->
+                <div class="gift-card-container">
+                    <div class="gift-card">
+                        <div class="card-logo">
+                            <h2>FindMyStay</h2>
+                            <span class="icon-placeholder"><i class="fa-solid fa-location-dot"></i></span>
+                        </div>
+                        <div class="card-details">
+                            <div class="offer-title">The Explorer's Gift</div>
+                            <div class="offer-subtitle">Perfect for a weekend getaway.</div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-value">₹5,000</div>
+                            <a href="#" class="buy-btn">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="gift-card-container">
+                    <div class="gift-card" style="background: linear-gradient(135deg, #1abc9c, #16a085);">
+                        <div class="card-logo">
+                            <h2>FindMyStay</h2>
+                            <span class="icon-placeholder"><i class="fa-solid fa-bed"></i></span>
+                        </div>
+                        <div class="card-details">
+                            <div class="offer-title">The Vacation Voucher</div>
+                            <div class="offer-subtitle">Cover a few nights' accommodation.</div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-value">₹15,000</div>
+                            <a href="#" class="buy-btn" style="color: #1abc9c;">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="gift-card-container">
+                    <div class="gift-card">
+                        <div class="card-logo">
+                            <h2>FindMyStay</h2>
+                            <span class="icon-placeholder"><i class="fa-solid fa-plane-departure"></i></span>
+                        </div>
+                        <div class="card-details">
+                            <div class="offer-title">The Ultimate Freedom</div>
+                            <div class="offer-subtitle">A luxury trip, fully covered.</div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-value">₹25,000</div>
+                            <a href="#" class="buy-btn">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Exclusive Partner Offers</h2>
+                <p>Save more with credit cards and UPI services.</p>
+            </div>
+
+            <div class="partner-offers-grid">
+                <!-- Offer 1 -->
+                <div class="offer-box">
+                    <div>
+                        <div class="offer-box-header">
+                            <span class="partner-logo"><i class="fa-solid fa-credit-card"></i></span>
+                            <h3>HDFC Bank Offer</h3>
+                        </div>
+                        <div class="offer-details">
+                            <h4>20% OFF</h4>
+                            <p>Max discount ₹1500 on all domestic stays. Valid on HDFC Credit Cards only. Min booking:
+                                ₹7500.</p>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <span>Code: <strong>HDFCVACA20</strong></span>
+                        <button class="copy-btn"
+                            onclick="navigator.clipboard.writeText('HDFCVACA20'); alert('Code Copied!');">Copy</button>
+                    </div>
+                </div>
+
+                <!-- Offer 2 -->
+                <div class="offer-box">
+                    <div>
+                        <div class="offer-box-header">
+                            <span class="partner-logo" style="color: #00baf2;"><i
+                                    class="fa-solid fa-qrcode"></i></span>
+                            <h3>PayTm UPI Cashback</h3>
+                        </div>
+                        <div class="offer-details">
+                            <h4>₹500 Cashback</h4>
+                            <p>Assured cashback when you pay via PayTm UPI. Valid on bookings above ₹10,000.</p>
+                        </div>
+                    </div>
+                    <div class="code-container" style="border-color: #00baf2; background-color: #f2fdff;">
+                        <span>Code: <strong>PAYTMSTAY500</strong></span>
+                        <button class="copy-btn" style="background-color: #00baf2;"
+                            onclick="navigator.clipboard.writeText('PAYTMSTAY500'); alert('Code Copied!');">Copy</button>
+                    </div>
+                </div>
+
+                <!-- Offer 3 -->
+                <div class="offer-box">
+                    <div>
+                        <div class="offer-box-header">
+                            <span class="partner-logo" style="color: #ff5a5f;"><i
+                                    class="fa-solid fa-money-check-dollar"></i></span>
+                            <h3>ICICI Bank Tuesdays</h3>
+                        </div>
+                        <div class="offer-details">
+                            <h4>Flat ₹1000 OFF</h4>
+                            <p>Discount applicable on bookings made every Tuesday using ICICI Debit or Credit cards.</p>
+                        </div>
+                    </div>
+                    <div class="code-container" style="border-color: #ff5a5f; background-color: #fff2f2;">
+                        <span>Code: <strong>ICICITUES1K</strong></span>
+                        <button class="copy-btn" style="background-color: #ff5a5f;"
+                            onclick="navigator.clipboard.writeText('ICICITUES1K'); alert('Code Copied!');">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
