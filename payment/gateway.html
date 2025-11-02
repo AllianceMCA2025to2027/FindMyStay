@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Gateway | FindMyStay</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #eef2f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .gateway-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      width: 360px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+    p {
+      color: #555;
+      margin-bottom: 25px;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="gateway-box">
+    <h2>FindMyStay Payment Gateway</h2>
+    <p id="summary"></p>
+    <form action="./success.html">
+        <button id="payBtn">Confirm Payment</button>
+    </form>
+    
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    const amount = params.get("amount");
+    document.getElementById("summary").innerText = `Pay ₹${amount} for your booking, ${name}.`;
+
+    document.getElementById("payBtn").addEventListener("click", () => {
+      // Simulate payment process delay
+      setTimeout(() => {
+        window.location.href = `success.html?name=${encodeURIComponent(name)}&amount=${encodeURIComponent(amount)}`;
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
