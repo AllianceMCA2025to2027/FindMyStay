@@ -954,8 +954,7 @@
             <div class="gallery-grid">
                 <!-- Large Main Image -->
                 <div class="main-image-wrapper image-item">
-                    <img src="./360.jpg" alt="Main Living Area"
-                        class="w-full h-full object-cover cursor-pointer">
+                    <img src="./360.jpg" alt="Main Living Area" class="w-full h-full object-cover cursor-pointer">
                     <div class="overlay"></div>
                     <!-- 360 Degree View Button --><button class="view-360-btn">
                         <i data-lucide="globe" class="w-4 h-4 mr-2"></i>
@@ -1162,32 +1161,35 @@
                     </div>
 
                     <!-- Booking Form -->
-                    <div class="booking-form">
-                        <!-- Check In/Out -->
-                        <div class="date-inputs">
-                            <div class="date-input-field">
-                                <label for="check-in-date">CHECK-IN</label>
-                                <input type="date" id="check-in-date" placeholder="Add dates">
+                    <form action="./payment/payment.html">
+                        <div class="booking-form">
+                            <!-- Check In/Out -->
+                            <div class="date-inputs">
+                                <div class="date-input-field">
+                                    <label for="check-in-date">CHECK-IN</label>
+                                    <input type="date" id="check-in-date" placeholder="Add dates">
+                                </div>
+                                <div class="date-input-field">
+                                    <label for="check-out-date">CHECKOUT</label>
+                                    <input type="date" id="check-out-date" placeholder="Add dates">
+                                </div>
                             </div>
-                            <div class="date-input-field">
-                                <label for="check-out-date">CHECKOUT</label>
-                                <input type="date" id="check-out-date" placeholder="Add dates">
+                            <!-- Guests -->
+                            <div class="guests-input-field">
+                                <label for="guest-count-input">GUESTS</label>
+                                <div class="flex justify-between items-center">
+                                    <input type="number" id="guest-count-input" value="1" min="1" max="4"
+                                        aria-label="Number of Guests">
+                                    <i data-lucide="chevron-down" class="w-4 h-4 text-gray-600 ml-2"></i>
+                                </div>
                             </div>
                         </div>
-                        <!-- Guests -->
-                        <div class="guests-input-field">
-                            <label for="guest-count-input">GUESTS</label>
-                            <div class="flex justify-between items-center">
-                                <input type="number" id="guest-count-input" value="1" min="1" max="4"
-                                    aria-label="Number of Guests">
-                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-600 ml-2"></i>
-                            </div>
-                        </div>
-                    </div>
 
-                    <button class="check-availability-btn mb-4">
-                        Check availability
-                    </button>
+                        <button class="check-availability-btn mb-4">
+                            Check availability
+                        </button>
+                    </form>
+
 
                     <!-- Price Details -->
                     <div class="price-breakdown text-gray-700">
