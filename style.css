@@ -784,3 +784,102 @@ Destinations Card
   }
 }
 
+/* animations */
+
+/* Card lift on hover — subtle elevation */
+.destination-card {
+  transform: translateY(0);
+  transition: transform 320ms cubic-bezier(.2,.9,.3,1), box-shadow 320ms ease;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.destination-card:hover,
+.destination-card:focus-within {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+/* Image zoom and gentle pan on hover (keeps image inside the rounded corners) */
+.destination-img-container {
+  overflow: hidden;
+  border-radius: 20px; /* matches your .destination-img border-radius */
+  transform: translateZ(0);
+}
+
+.destination-img {
+  transition: transform 700ms cubic-bezier(.2,.9,.3,1);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* zoom image when hovering card */
+.destination-card:hover .destination-img,
+.destination-card:focus-within .destination-img {
+  transform: scale(1.08) translateY(-4px);
+}
+/* Reveal text subtly when hovering */
+.destination-text-container {
+  transform: translateY(0);
+  transition: transform 360ms cubic-bezier(.2,.9,.3,1), opacity 320ms ease;
+  opacity: 1;
+}
+
+.destination-card:hover .destination-text-container,
+.destination-card:focus-within .destination-text-container {
+  transform: translateY(-6px);
+  opacity: 1;
+}
+/* Fade-up entrance for a nicer initial load; stagger with nth-child */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* apply to grid children — tweak number of children as needed */
+.destinations-grid-container .destination-card {
+  opacity: 0;
+  animation-name: fadeUp;
+  animation-duration: 520ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.2,.9,.3,1);
+}
+
+/* Stagger: small delays for each card */
+.destinations-grid-container .destination-card:nth-child(1) { animation-delay: 0ms; }
+.destinations-grid-container .destination-card:nth-child(2) { animation-delay: 60ms; }
+.destinations-grid-container .destination-card:nth-child(3) { animation-delay: 120ms; }
+.destinations-grid-container .destination-card:nth-child(4) { animation-delay: 180ms; }
+.destinations-grid-container .destination-card:nth-child(5) { animation-delay: 240ms; }
+.destinations-grid-container .destination-card:nth-child(6) { animation-delay: 300ms; }
+.destinations-grid-container .destination-card:nth-child(7) { animation-delay: 360ms; }
+
+/* If you have many items, nth-child rules can repeat or you can set a generic small-delay fallback */
+
+/* Pulse the heart a little when user hovers it */
+.fa-heart {
+  transition: transform 280ms ease, opacity 220ms ease;
+  transform-origin: center;
+}
+
+.fa-heart:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destination-card,
+  .destination-img,
+  .destination-text-container,
+  .fa-heart,
+  .destinations-grid-container .destination-card {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
