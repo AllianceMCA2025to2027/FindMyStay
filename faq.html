@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./icon.png">
+  <title>FAQs | FindMyStay</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f9fafc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .faq {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background: #f2f6ff;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      position: relative;
+      font-weight: 600;
+      color: #004aad;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question::after {
+      content: "+";
+      font-size: 1.5rem;
+      color: #004aad;
+      transition: transform 0.3s ease;
+    }
+
+    .faq.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1rem 1.5rem;
+      background: white;
+      border-top: 1px solid #eee;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .faq.active .faq-answer {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Frequently Asked Questions</h1>
+    <p>Find quick answers about FindMyStay</p>
+  </header>
+
+  <div class="faq-container">
+    <div class="faq">
+      <div class="faq-question">What is FindMyStay?</div>
+      <div class="faq-answer">
+        FindMyStay is a smart platform that helps users discover, view, and book their perfect stay — complete with 360° room views, verified listings, and AI chatbot assistance.
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">How is FindMyStay different from other platforms?</div>
+      <div class="faq-answer">
+        We offer an immersive 360° virtual tour and an AI-powered chatbot to answer all your stay-related queries instantly — features most other sites lack.
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">Are all the listed properties verified?</div>
+      <div class="faq-answer">
+        Yes, every property listed on FindMyStay is verified for safety, cleanliness, and authenticity before appearing on our site.
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">Can I contact property owners directly?</div>
+      <div class="faq-answer">
+        Yes, you can connect with property owners through our secure messaging or contact option once you’re signed in.
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">Is there a fee to use FindMyStay?</div>
+      <div class="faq-answer">
+        Browsing and exploring listings is completely free! However, a small service charge may apply during confirmed bookings.
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">How can I list my property?</div>
+      <div class="faq-answer">
+        Simply click on the <b>“List Your Property”</b> option on our homepage and fill in your property details. Our team will verify and publish it after review.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 FindMyStay | All Rights Reserved
+  </footer>
+
+  <script>
+    const faqs = document.querySelectorAll(".faq");
+
+    faqs.forEach((faq) => {
+      faq.addEventListener("click", () => {
+        faq.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
